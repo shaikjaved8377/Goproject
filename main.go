@@ -32,22 +32,39 @@ func plaindrome(s string) bool {
 	return s == reversed
 }
 
-func main() {
-	//goroutines
-	greetings := map[string]string{
-		"English": "Hello",
-		"Spanish": "Hola",
-		"French":  "Bonjour",
-		"German":  "Hallo",
-		"Hindi":   "Namaste",
-	}
-	for i, m := range greetings {
-		go func() {
-			fmt.Println(i, m)
-		}()
-	}
+//printing diff languages using go routines
 
-	time.Sleep(2 * time.Second)
+func greetEnglish() {
+	time.Sleep(50 * time.Millisecond)
+	fmt.Println("English → Hello")
+}
+
+func greetSpanish() {
+	time.Sleep(50 * time.Millisecond)
+	fmt.Println("Spanish → Hola")
+}
+
+func greetHindi() {
+	time.Sleep(50 * time.Millisecond)
+	fmt.Println("Hindi → Namaste")
+}
+
+func main() {
+
+	go greetEnglish()
+	go greetSpanish()
+	go greetHindi()
+	time.Sleep(200 * time.Millisecond)
+
+	// printing count of the characters
+	str := "go run run yes go"
+	count := map[string]int{}
+	for _, w := range strings.Fields(str) {
+		count[w]++
+	}
+	for w, c := range count {
+		fmt.Printf("%s-%d\n", w, c)
+	}
 
 	word := "DAD"
 	if plaindrome(word) {
