@@ -40,12 +40,12 @@ func greetEnglish() {
 }
 
 func greetSpanish() {
-	time.Sleep(50 * time.Millisecond)
+	time.Sleep(70 * time.Millisecond)
 	fmt.Println("Spanish → Hola")
 }
 
 func greetHindi() {
-	time.Sleep(50 * time.Millisecond)
+	time.Sleep(40 * time.Millisecond)
 	fmt.Println("Hindi → Namaste")
 }
 
