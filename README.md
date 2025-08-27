@@ -1,3 +1,34 @@
+
+Goroutines: go routines are lightweight threads and its started with go keyword. we can run millions of 
+            go routines. The main function will end the program when it completes even the other go routines 
+            still running, So for that we have use time.sleep() methods to wait the main program until the go routines completes and the exit the main program.
+
+syn.wait groups in go: its a same as time.sleep but in real word we can decide the program execution
+                       time right so in that case we have use wait groups for example if the program execution is completes in 2 seconds and we are giving time.sleep for 5 seconds in that case we are wasting 3 seconds right so there the wait groups comes into picture, So here we have 3 methods like 
+                       var wg sync.WaitGroup we have declare the variable wg for waitgroup and then we have different methods, wg.Add(n) , wg.Done(), wg.Wait().
+
+                       so wg.Add(n) means we have to add some value for example 1 atleast if you give 0 there is no 
+                       use of adding the value because we are running go routines here so we have tell like these many go routines that we are running and we have to wait.
+
+                       wg.Done(): which means onces the go routines finishes or executed the go will call this function to tell that im done.
+                        
+                       wg.Wait(): which means it will wait like the Add value to become zero then the program exits 
+                                  it will wait untill the all go routines are done.
+
+
+
+channels: Channels in go are nothing but the communication between two go routines, and we will use variable chan 
+          to declear the channel alago with data type and will pass the value into the channel from one go to another go routines like ch <- i. there are two types of channles in go 
+
+          1.Buffered channel: Buffered channel is like sender will send the data but reciver will pick the 
+                              data later. and also buffered channel is like has a fixed capacity. based on 
+                              the capacity its completed the program. example: ch:= make(chan int, 5)
+
+
+          2. Unbuffered channel: unbuffered channel is like sending the data and reciver will recive the data from 
+                                 channel directly. for unbuffered is no capacity. ex: ch:= make(chan int)
+       
+
 1.Fibonacci series
 
 Here im checking fibonacci sereies for 10, so i took number as 10 and fibonnaci starts with 0,1 so 

@@ -65,7 +65,7 @@ func main() {
 	for w, c := range count {
 		fmt.Printf("%s-%d\n", w, c)
 	}
-
+	// plaindrome
 	word := "DAD"
 	if plaindrome(word) {
 		fmt.Println("Yes its a plaindrome", word)
@@ -148,7 +148,7 @@ func main() {
 
 	//pointers
 
-	i := 5
+	i := 6
 	j := &i
 	fmt.Println("the value of i:", i)
 	fmt.Println("the address of i:", &i)
